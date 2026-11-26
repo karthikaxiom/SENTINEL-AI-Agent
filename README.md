@@ -1,6 +1,10 @@
 # SENTINEL — Autonomous Multi-Agent Decision Intelligence
 
- AI coursework prototype. A cooperative, deterministic software-agent pipeline for synthetic crisis resource allocation. Runs without an internet connection or dependencies. Not a real emergency response system.
+A research prototype. A cooperative, deterministic software-agent pipeline for synthetic crisis resource allocation. Runs without an internet connection or dependencies. Not a real emergency response system.
+
+## Version 2.0
+
+The redesigned workspace features visual regional coverage, expandable allocation details and an experiment lab. The lab independently applies four disruptions to the last executed mission, recomputes each allocation using the existing optimizer, compares utility and exports reproducible JSON evidence. It does not modify the active mission. Changed risk and demand make raw utility differences descriptive rather than causal impact estimates. GitHub Pages supports the local planning engine; optional LLM review still requires the separate Python server.
 
 ## Run on Windows
 1. Extract the ZIP. Open `index.html` in Chrome or Edge. Keep `engine.js` and `ui.js` beside it. Alternatively open the separately supplied standalone HTML (all code embedded).
