@@ -1,6 +1,6 @@
 # SENTINEL — Autonomous Multi-Agent Decision Intelligence
 
-MTech AI coursework prototype. A cooperative, deterministic software-agent pipeline for synthetic crisis resource allocation. Runs without an internet connection or dependencies. Not a real emergency response system.
+ AI coursework prototype. A cooperative, deterministic software-agent pipeline for synthetic crisis resource allocation. Runs without an internet connection or dependencies. Not a real emergency response system.
 
 ## Run on Windows
 1. Extract the ZIP. Open `index.html` in Chrome or Edge. Keep `engine.js` and `ui.js` beside it. Alternatively open the separately supplied standalone HTML (all code embedded).
