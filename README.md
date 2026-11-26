@@ -2,6 +2,10 @@
 
 A research prototype. A cooperative, deterministic software-agent pipeline for synthetic crisis resource allocation. Runs without an internet connection or dependencies. Not a real emergency response system.
 
+## Version 2.4
+
+The hosted application is self-contained in index.html. Download PDF report generates a paginated PDF of the last executed mission; JSON retains structured evidence. Optional LLM review is enabled only on the local Python server at port 8765. API keys stay in the server environment, never in GitHub or browser code. The hosted Plan Audit is deterministic and requires no credentials. PDF text uses ASCII-compatible Helvetica; non-ASCII characters are replaced. Live provider access requires separately billed API credentials.
+
 ## Version 2.0
 
 The redesigned workspace features visual regional coverage, expandable allocation details and an experiment lab. The lab independently applies four disruptions to the last executed mission, recomputes each allocation using the existing optimizer, compares utility and exports reproducible JSON evidence. It does not modify the active mission. Changed risk and demand make raw utility differences descriptive rather than causal impact estimates. GitHub Pages supports the local planning engine; optional LLM review still requires the separate Python server.
