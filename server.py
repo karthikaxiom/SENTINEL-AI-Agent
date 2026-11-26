@@ -1,5 +1,5 @@
 """Optional loopback-only HTTP server and OpenAI-compatible advisory review."""
-import json, os, urllib.request, urllib.error
+import json, os, urllib.request, urllib.error, threading, webbrowser
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from functools import partial
@@ -39,5 +39,14 @@ class Handler(SimpleHTTPRequestHandler):
         except urllib.error.HTTPError as e: self.reply(502,{'error':f'Provider HTTP {e.code}; check credentials, model and quota.'})
         except Exception: self.reply(502,{'error':'Review failed; offline planner remains available.'})
 if __name__=='__main__':
+    try:
+        server = ThreadingHTTPServer(('127.0.0.1',8765),partial(Handler,directory=str(Path(__file__).resolve().parent)))
+    except OSError:
+        print('Port 8765 is already in use. Close the earlier SENTINEL server and try again.',flush=True)
+        raise SystemExit(1)
     print('SENTINEL: http://127.0.0.1:8765',flush=True)
-    ThreadingHTTPServer(('127.0.0.1',8765),partial(Handler,directory=str(Path(__file__).resolve().parent))).serve_forever()
+    print('Keep this window open. Press Ctrl+C to stop.',flush=True)
+    threading.Timer(0.6, lambda: webbrowser.open('http://127.0.0.1:8765/')).start()
+    try: server.serve_forever()
+    except KeyboardInterrupt: pass
+    finally: server.server_close()
