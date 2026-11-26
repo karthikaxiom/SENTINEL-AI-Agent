@@ -1,0 +1,16 @@
+flood baseline 44 optimized 53 served 10 transitions 186
+  vehicle 44 53 10
+  access 39 51 10
+  surge 47 54 10
+  supply 33 38 7
+quake baseline 42 optimized 63 served 12 transitions 203
+  vehicle 34 47 9
+  access 37 43 10
+  surge 50 65 12
+  supply 34 48 9
+outage baseline 38 optimized 43 served 8 transitions 132
+  vehicle 34 43 8
+  access 38 43 8
+  surge 44 45 8
+  supply 26 28 5
+96 valid mission cases passed; 80 independently checked for global optimality; 2 invalid cases rejected.
