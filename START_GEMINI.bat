@@ -1,4 +1,6 @@
 @echo off
 cd /d "%~dp0"
-py -c "import getpass,os,runpy; os.environ['GEMINI_API_KEY']=getpass.getpass('Enter Gemini API key: '); runpy.run_path('server.py',run_name='__main__')"
+echo SENTINEL - local intelligence
+echo Paste a NEW Gemini key when prompted, or press Enter for offline mode.
+py -c "import os,runpy; os.environ['GEMINI_API_KEY']=input('Gemini API key: ').strip(); runpy.run_path('server.py',run_name='__main__')"
 pause
